@@ -49,6 +49,7 @@ column1 = dbc.Col([
 				id='brand-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_brands],
+				value='FENDER'
 			)
 		]),
 		html.Div([
@@ -57,6 +58,7 @@ column1 = dbc.Col([
 				id='model-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_models],
+				value='TELECASTER'
 			)
 		]),
 		html.Div([
@@ -65,6 +67,7 @@ column1 = dbc.Col([
 				id='color-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_colors],
+				value='YELLOW'
 			)
 		]),
 		html.Div([
@@ -73,6 +76,7 @@ column1 = dbc.Col([
 				id='material-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_materials],
+				value='MAHOGANY'
 			)
 		]),
 		html.Div([
@@ -81,6 +85,7 @@ column1 = dbc.Col([
 				id='btype-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_btypes],
+				value='SOLID'
 			)
 		]),
 		html.Div([
@@ -89,6 +94,7 @@ column1 = dbc.Col([
 				id='sizes-dd', 
 				options=[
 					{'label': i, 'value': i} for i in available_sizes],
+				value='OTHER'
 			)
 		]),
 	],
@@ -101,7 +107,8 @@ column2 = dbc.Col([
 			dcc.Dropdown(
 				id='country-dd', 
 				options=[
-					{'label': i, 'value': i} for i in available_countries]
+					{'label': i, 'value': i} for i in available_countries],
+				value='JAPAN'
 			)
 		]),
 		html.Div([
@@ -109,7 +116,8 @@ column2 = dbc.Col([
 			dcc.Dropdown(
 				id='strings-dd', 
 				options=[
-					{'label': i, 'value': i} for i in available_sconfigs]
+					{'label': i, 'value': i} for i in available_sconfigs],
+				value='6 STRING'
 			)
 		]),
 		html.Div([
@@ -117,7 +125,8 @@ column2 = dbc.Col([
 			dcc.Dropdown(
 				id='pline-dd', 
 				options=[
-					{'label': i, 'value': i} for i in available_plines]
+					{'label': i, 'value': i} for i in available_plines],
+				value='OTHER'
 			)
 		]),
 		html.Div([
@@ -125,7 +134,8 @@ column2 = dbc.Col([
 			dcc.Dropdown(
 				id='orient-dd', 
 				options=[
-					{'label': i, 'value': i} for i in orientations]
+					{'label': i, 'value': i} for i in orientations],
+				value='RIGHT-HANDED'
 			)
 		]),
 		html.Div([
@@ -133,7 +143,8 @@ column2 = dbc.Col([
 			dcc.Dropdown(
 				id='condition-dd', 
 				options=[
-					{'label': i, 'value': i} for i in conditions]
+					{'label': i, 'value': i} for i in conditions],
+				value='Used'
 			)
 		]),
 		html.Div([
@@ -175,7 +186,7 @@ column3 = dbc.Col([
 			min=1940,
 			max=2020,
 			step=2,
-			value=1940,
+			value=1987,
 			marks={n: f'{n:.0f}'for n in range(1940,2040,10)}
 		),
 		html.H4(id='prediction-content', style={'fontWeight':'bold'}),
