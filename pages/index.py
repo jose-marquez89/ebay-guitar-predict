@@ -1,15 +1,10 @@
-# Imports from 3rd party libraries
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-
-# Imports from this application
 from app import app
 
-# 2 column layout. 1st column width = 4/12
-# https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
         dcc.Markdown(
@@ -17,16 +12,25 @@ column1 = dbc.Col(
         
             ## How Much Will eBayers Pay?
 
-            Despite MSRP's, guitars often sell for unexpected prices on one of the world's largest
-            online marketplaces. These prices are unlikely to be driven by normal market expectations.
+            Despite MSRP's, guitars often sell for unexpected prices 
+            on one of the world's largest online marketplaces. These 
+            prices are unlikely to be driven by normal market expectations.
 
-            Color, wood, country of manufacturing, brand...these differences can sway the minds and emotions of guitar buyers on eBay.
+            Color, wood, country of manufacturing, brand...these 
+            differences can sway the minds and emotions of guitar 
+            buyers on eBay.
 
-            You can use [**Machine Learning**](https://en.wikipedia.org/wiki/Machine_learning) in this app to predict these price fluctuations.
+            You can use 
+            [**Machine Learning**]
+            (https://en.wikipedia.org/wiki/Machine_learning) 
+            in this app to predict these price fluctuations.
 
             """
         ),
-        dcc.Link(dbc.Button('Predict Resale Price', color='primary'), href='/predictions')
+        dcc.Link(
+			dbc.Button('Predict Resale Price', color='primary'), 
+			href='/predictions'
+		)
     ],
     md=4,
 )
