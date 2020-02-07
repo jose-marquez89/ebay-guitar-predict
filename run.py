@@ -36,10 +36,22 @@ footer = dbc.Container(
             html.P(
                 [
                     html.Span('Jose Marquez', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:jlmarquez89@gmail.com'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/jose-marquez89/predict-guitar-value'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/<you>/'), 
-                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/jlmarquez89'), 
+                    html.A(
+						html.I(className='fas fa-envelope-square mr-1'), 
+						href='mailto:jlmarquez89@gmail.com'
+					), 
+                    html.A(
+						html.I(className='fab fa-github-square mr-1'), 
+						href='https://github.com/jose-marquez89/ebay-guitar-predict'
+					), 
+                    html.A(
+						html.I(className='fab fa-linkedin mr-1'), 
+						href='https://www.linkedin.com/in/<you>/'
+					), 
+                    html.A(
+						html.I(className='fab fa-twitter-square mr-1'), 
+						href='https://twitter.com/jlmarquez89'
+					), 
                 ], 
                 className='lead'
             )
@@ -47,10 +59,7 @@ footer = dbc.Container(
     )
 )
 
-# Layout docs:
-# html.Div: https://dash.plot.ly/getting-started
-# dcc.Location: https://dash.plot.ly/dash-core-components/location
-# dbc.Container: https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
+
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False), 
     navbar, 

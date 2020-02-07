@@ -10,6 +10,13 @@ from app import app
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+styles = {
+	'table-data': {
+		'border': 'thin lightgrey solid',
+		'overflowX': 'scroll'
+	}
+}
+
 # Set df's for dist plots
 price = pd.read_csv('data/price.csv')
 y = price['Price'].values
@@ -65,10 +72,10 @@ column1 = dbc.Col(
 
 
 column2 = dbc.Col([
-		html.Div(children=[
-			html.H4(children='Guitar Data, Source: eBay'),
-			generate_table(sample)
-			]
+		html.H4(children='Guitar Data, Source: eBay'),
+		html.Div(
+			children=generate_table(sample), 
+			style=styles['table-data']
 		)
 	],
 	md=12		
@@ -128,9 +135,26 @@ column5 = dbc.Col([
 			improved by more iterations. When this process is complete,
 			we get our final model, which can make predictions that
 			often beat even an educated guess!
-			""")])
+			""")],
+		md=6
+	)
+
+column6 = dbc.Col(
+		dcc.Graph(
+			id='error-graph',
+			figure={
+				'data': [
+					{'x': ['Baseline Error'], 'y': [1.35],
+					 'type': 'bar', 'name': 'Using Baseline'},
+					{'x': ['GB Error'], 'y': [0.65],
+					 'type': 'bar', 'name': 'Using XGBoost'},
+				],
+				'layout': {'title': 'Baseline VS. XGBoost'}
+			}),
+			md=6
+		)
 
 layout = [dbc.Row([column1]),
 		  dbc.Row([column2]),
 		  dbc.Row([column3, column4]),
-		  dbc.Row([column5])]
+		  dbc.Row([column5, column6])]
